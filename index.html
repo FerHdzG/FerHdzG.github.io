@@ -80,6 +80,14 @@
       box-shadow: 0 0 18px var(--secondary);
     }
 
+    /* Logos pequeños solo para testimonios */
+    .testimonio img {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px var(--secondary);
+    }
+
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
     .skill { background: var(--bg-main); padding: 16px; border-radius: 14px; text-align: center; box-shadow: 0 0 14px var(--primary); }
 
@@ -112,11 +120,20 @@
 <section>
   <h2>🧠 Sobre mí</h2>
   <p>
-    Desarrollador de nivel medio especializado en bots de Discord y sistemas para servidores de Minecraft.
-    Experiencia creando herramientas reales utilizadas por comunidades activas,
-    enfocado en automatización, estabilidad y escalabilidad.
+    Desarrollador especializado en bots de Discord y sistemas para servidores de Minecraft.
+    He trabajado con comunidades reales, creando soluciones estables y fáciles de usar,
+    enfocadas en mejorar la organización, moderación y experiencia de los jugadores.
   </p>
-  <p><strong>Experiencia destacada:</strong> +4 servidores de Minecraft • Bots activos en comunidades reales</p>
+</section>
+
+<section>
+  <h2>📊 Números que me respaldan</h2>
+  <div class="skills">
+    <div class="skill"><strong>+5</strong><br>Servidores trabajados</div>
+    <div class="skill"><strong>+1,000</strong><br>Usuarios gestionados</div>
+    <div class="skill"><strong>+10</strong><br>Sistemas implementados</div>
+    <div class="skill"><strong>100%</strong><br>Proyectos funcionales</div>
+  </div>
 </section>
 
 <section>
@@ -175,11 +192,39 @@
 <section>
   <h2>🛠️ Habilidades</h2>
   <div class="skills">
-    <div class="skill">Bots de Discord (Botones, Menús, Comandos Slash)</div>
+    <div class="skill">Bots de Discord (Botones, Menús, Slash Commands)</div>
     <div class="skill">Node.js & JavaScript</div>
-    <div class="skill">Sistemas para servidores de Minecraft</div>
-    <div class="skill">Automatización y herramientas de moderación</div>
-    <div class="skill">Desarrollo enfocado en comunidades</div>
+    <div class="skill">Sistemas de tickets y moderación</div>
+    <div class="skill">Integraciones para servidores de Minecraft</div>
+    <div class="skill">Automatización y herramientas personalizadas</div>
+  </div>
+</section>
+
+<section>
+  <h2>⭐ Testimonios</h2>
+
+  <div class="project testimonio">
+    <img src="img/minemytic.png" alt="MineMytic">
+    <div>
+      <h3>MrTerde — Owner de MineMytic</h3>
+      <p>"El bot funciona perfecto, el sistema de tickets nos organizó todo el staff y mejoró la gestión del servidor."</p>
+    </div>
+  </div>
+
+  <div class="project testimonio">
+    <img src="img/hylexmc.png" alt="HylexMC">
+    <div>
+      <h3>IronHeal — Manager de HylexMC</h3>
+      <p>"Trabajo profesional, comunicación clara y sistemas muy bien optimizados para Discord."</p>
+    </div>
+  </div>
+
+  <div class="project testimonio">
+    <img src="img/rivallatam.png" alt="Rival LATAM">
+    <div>
+      <h3>Owen — Dueño de Rival LATAM</h3>
+      <p>"Muy recomendado para proyectos serios de Minecraft y Discord. Resultados sólidos."</p>
+    </div>
   </div>
 </section>
 
