@@ -2,122 +2,90 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio | FerHdzG</title>
 
+  <!-- SEO básico -->
+  <meta name="description" content="FerHdzG — Developer especializado en bots de Discord y sistemas para servidores de Minecraft.">
+  <meta name="author" content="FerHdzG">
+
   <style>
+    :root {
+      --bg-main: #020617;
+      --bg-dark: #000000;
+      --primary: #38bdf8;
+      --secondary: #22c55e;
+      --accent: #a855f7;
+      --text-main: #e5e7eb;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #020617, #000);
-      color: #e5e7eb;
       margin: 0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: radial-gradient(circle at top, var(--bg-main), var(--bg-dark));
+      color: var(--text-main);
       padding: 20px;
     }
 
-    /* ===== ANIMACIONES ===== */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes rgbGlow {
-      0% { box-shadow: 0 0 15px #38bdf8; }
-      33% { box-shadow: 0 0 25px #22c55e; }
-      66% { box-shadow: 0 0 25px #a855f7; }
-      100% { box-shadow: 0 0 15px #38bdf8; }
+      0% { box-shadow: 0 0 15px var(--primary); }
+      50% { box-shadow: 0 0 30px var(--secondary); }
+      100% { box-shadow: 0 0 15px var(--primary); }
     }
 
-    header, section {
-      animation: fadeUp 1s ease forwards;
-    }
+    header, section, footer { animation: fadeUp 1s ease forwards; }
 
-    /* ===== HEADER ===== */
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+    header { text-align: center; margin-bottom: 50px; }
+    header h1 { font-size: 44px; color: var(--primary); text-shadow: 0 0 25px var(--primary); }
 
-    h1 {
-      font-size: 40px;
-      color: #38bdf8;
-      text-shadow: 0 0 20px #38bdf8;
-    }
+    .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .tag { background: var(--bg-main); padding: 6px 14px; border-radius: 999px; font-size: 13px; box-shadow: 0 0 10px var(--primary); }
 
-    h2 {
-      color: #22c55e;
-      text-shadow: 0 0 10px #22c55e;
-      margin-bottom: 14px;
-    }
-
-    section {
-      background: linear-gradient(145deg, #020617, #020617);
-      padding: 22px;
-      margin-bottom: 30px;
-      border-radius: 18px;
-      animation: rgbGlow 6s infinite;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #020617;
-      padding: 6px 12px;
+    .btn {
+      padding: 10px 18px;
       border-radius: 999px;
-      font-size: 13px;
-      margin: 5px;
-      box-shadow: 0 0 10px #38bdf8;
+      background: var(--primary);
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: transform .3s, box-shadow .3s;
     }
 
-    /* ===== PROYECTOS ===== */
+    .btn:hover { transform: scale(1.08); box-shadow: 0 0 20px var(--primary); }
+    .btn.secondary { background: var(--secondary); }
+    .btn.accent { background: var(--accent); color:#fff; }
+
+    section { background: #020617; padding: 28px; margin-bottom: 35px; border-radius: var(--radius); }
+    section h2 { color: var(--secondary); text-shadow: 0 0 12px var(--secondary); }
+
     .project {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 25px;
-      padding: 15px;
-      border-radius: 16px;
-      transition: all 0.4s ease;
-      animation: rgbGlow 5s infinite;
+      display: flex; gap: 22px; align-items: center; padding: 18px;
+      border-radius: 16px; margin-bottom: 22px;
+      transition: transform .4s, box-shadow .4s;
     }
 
-    .project:hover {
-      transform: scale(1.05) rotateX(5deg);
-      box-shadow: 0 0 40px #38bdf8;
-    }
+    .project:hover { transform: scale(1.04); animation: rgbGlow 3s infinite; }
 
     .project img {
-      width: 130px;
-      height: 130px;
-      border-radius: 16px;
-      object-fit: cover;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      box-shadow: 0 0 20px #22c55e;
+      width: 130px; height: 130px; border-radius: 16px; object-fit: cover;
+      box-shadow: 0 0 18px var(--secondary);
     }
 
-    .project:hover img {
-      transform: scale(1.15) rotate(-2deg);
-      box-shadow: 0 0 35px #22c55e;
-    }
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+    .skill { background: var(--bg-main); padding: 16px; border-radius: 14px; text-align: center; box-shadow: 0 0 14px var(--primary); }
 
-    /* ===== MINECRAFT GLOW ===== */
-    .minecraft {
-      animation: minecraftGlow 4s infinite;
-    }
+    footer { text-align: center; opacity: .7; margin-top: 40px; font-size: 14px; }
 
-    @keyframes minecraftGlow {
-      0% { box-shadow: 0 0 15px #22c55e; }
-      50% { box-shadow: 0 0 35px #22c55e; }
-      100% { box-shadow: 0 0 15px #22c55e; }
-    }
-
-    footer {
-      text-align: center;
-      opacity: 0.7;
-      margin-top: 40px;
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
+    @media (max-width:768px){ .project{flex-direction:column; text-align:center;} }
   </style>
 </head>
 
@@ -125,21 +93,28 @@
 
 <header>
   <h1>⚡ FerHdzG</h1>
-  <p>Developer • Bots • Minecraft</p>
-  <div>
+  <p>Desarrollador • Bots de Discord • Sistemas de Minecraft</p>
+
+  <div class="tags">
     <span class="tag">JavaScript</span>
     <span class="tag">Node.js</span>
-    <span class="tag">Discord Bots</span>
+    <span class="tag">Discord.js</span>
     <span class="tag">Minecraft</span>
+  </div>
+
+  <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+    <a href="#contacto" class="btn">Contacto</a>
+    <a href="cv-ferhdzg.pdf" class="btn secondary" download>Descargar CV</a>
+    <a href="?lang=en" class="btn accent">English Version</a>
   </div>
 </header>
 
 <section>
   <h2>🧠 Sobre mí</h2>
   <p>
-    Developer nivel medio con experiencia en bots de Discord
-    y creación de servidores de Minecraft.
-    Desarrollo sistemas reales usados en comunidades activas.
+    Desarrollador de nivel medio especializado en bots de Discord y sistemas para servidores de Minecraft.
+    Experiencia en la creación de herramientas reales utilizadas por comunidades activas,
+    enfocado en automatización, estabilidad y escalabilidad.
   </p>
 </section>
 
@@ -147,13 +122,11 @@
   <h2>🤖 Proyecto Principal</h2>
 
   <div class="project">
-    <img src="img/jockercontrol.png">
+    <img src="img/jockercontrol.png" alt="JockerControl">
     <div>
       <h3>JockerControl</h3>
-      <p>
-        Bot de Discord para administración, automatización
-        e integración con servidores de Minecraft.
-      </p>
+      <p>Bot profesional de Discord con sistemas de tickets, moderación, automatización y conexión con Minecraft.</p>
+      <a class="btn" href="https://github.com/FerHdzG" target="_blank">Ver proyecto</a>
     </div>
   </div>
 </section>
@@ -161,47 +134,63 @@
 <section>
   <h2>⛏️ Servidores de Minecraft</h2>
 
-  <div class="project minecraft">
-    <img src="img/lunaticmc.png">
+  <div class="project">
+    <img src="img/jockercontrol.png" alt="JockerControl">
     <div>
-      <h3>LunaticMC</h3>
-      <p>Desarrollo de sistemas, bots y soporte técnico.</p>
+      <h3>JockerControl</h3>
+      <p>Bot profesional de Discord con sistemas de tickets, moderación, automatización y conexión con Minecraft.</p>
+      <a class="btn" href="https://github.com/FerHdzG" target="_blank">Ver proyecto</a>
     </div>
   </div>
 
-  <div class="project minecraft">
-    <img src="img/crazycubes.png">
+  <div class="project">
+    <img src="img/jockercontrol.png" alt="JockerControl">
     <div>
-      <h3>CrazyCubes</h3>
-      <p>Configuración y desarrollo del servidor.</p>
+      <h3>JockerControl</h3>
+      <p>Bot profesional de Discord con sistemas de tickets, moderación, automatización y conexión con Minecraft.</p>
+      <a class="btn" href="https://github.com/FerHdzG" target="_blank">Ver proyecto</a>
     </div>
   </div>
 
-  <div class="project minecraft">
-    <img src="img/minemytic.png">
+  <div class="project">
+    <img src="img/jockercontrol.png" alt="JockerControl">
     <div>
-      <h3>MineMytic</h3>
-      <p>Estructura del servidor y herramientas administrativas.</p>
+      <h3>JockerControl</h3>
+      <p>Bot profesional de Discord con sistemas de tickets, moderación, automatización y conexión con Minecraft.</p>
+      <a class="btn" href="https://github.com/FerHdzG" target="_blank">Ver proyecto</a>
     </div>
   </div>
 
-  <div class="project minecraft">
-    <img src="img/hylexmc.png">
+  <div class="project">
+    <img src="img/jockercontrol.png" alt="JockerControl">
     <div>
-      <h3>HylexMC</h3>
-      <p>Gestión e integración Discord.</p>
+      <h3>JockerControl</h3>
+      <p>Bot profesional de Discord con sistemas de tickets, moderación, automatización y conexión con Minecraft.</p>
+      <a class="btn" href="https://github.com/FerHdzG" target="_blank">Ver proyecto</a>
     </div>
   </div>
 </section>
 
 <section>
+  <h2>🛠️ Habilidades</h2>
+  <div class="skills">
+    <div class="skill">Bots de Discord (Botones, Menús, Comandos Slash)</div>
+    <div class="skill">Node.js & JavaScript</div>
+    <div class="skill">Sistemas para servidores de Minecraft</div>
+    <div class="skill">Automatización y herramientas de moderación</div>
+    <div class="skill">Desarrollo enfocado en comunidades</div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
   <h2>📞 Contacto</h2>
-  <p>GitHub: <a href="https://github.com/FerHdzG" target="_blank">FerHdzG</a></p>
-  <p>Discord: JockerControl</p>
+  <p>Discord: <strong>FerHdz</strong></p>
+  <p>Email: <a href="mailto:hegf0408@gmail.com">hegf0408@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/FerHdzG" target="_blank">github.com/FerHdzG</a></p>
 </section>
 
 <footer>
-  <p>© 2025 FerHdzG — Gamer Dev</p>
+  <p>© 2025 FerHdzG — Desarrollador Gamer</p>
 </footer>
 
 </body>
