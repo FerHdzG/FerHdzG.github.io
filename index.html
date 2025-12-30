@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #0f172a;
+      background: radial-gradient(circle at top, #020617, #000);
       color: #e5e7eb;
       margin: 0;
       padding: 20px;
@@ -15,68 +15,55 @@
 
     /* ===== ANIMACIONES ===== */
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rgbGlow {
+      0% { box-shadow: 0 0 15px #38bdf8; }
+      33% { box-shadow: 0 0 25px #22c55e; }
+      66% { box-shadow: 0 0 25px #a855f7; }
+      100% { box-shadow: 0 0 15px #38bdf8; }
     }
 
     header, section {
-      animation: fadeUp 0.8s ease forwards;
+      animation: fadeUp 1s ease forwards;
     }
 
-    section {
-      animation-delay: 0.15s;
-    }
-
-    /* ===== ESTILOS ===== */
+    /* ===== HEADER ===== */
     header {
       text-align: center;
       margin-bottom: 40px;
     }
 
     h1 {
+      font-size: 40px;
       color: #38bdf8;
-      margin-bottom: 8px;
+      text-shadow: 0 0 20px #38bdf8;
     }
 
     h2 {
       color: #22c55e;
-      margin-bottom: 12px;
+      text-shadow: 0 0 10px #22c55e;
+      margin-bottom: 14px;
     }
 
     section {
-      background-color: #020617;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 14px;
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
+      background: linear-gradient(145deg, #020617, #020617);
+      padding: 22px;
+      margin-bottom: 30px;
+      border-radius: 18px;
+      animation: rgbGlow 6s infinite;
     }
 
     .tag {
       display: inline-block;
-      background: #1e293b;
-      padding: 4px 10px;
-      border-radius: 8px;
+      background: #020617;
+      padding: 6px 12px;
+      border-radius: 999px;
       font-size: 13px;
-      margin-right: 6px;
-      margin-top: 6px;
+      margin: 5px;
+      box-shadow: 0 0 10px #38bdf8;
     }
 
     /* ===== PROYECTOS ===== */
@@ -84,133 +71,138 @@
       display: flex;
       gap: 20px;
       align-items: center;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+      animation: rgbGlow 5s infinite;
     }
 
     .project:hover {
-      transform: translateY(-6px);
+      transform: scale(1.05) rotateX(5deg);
+      box-shadow: 0 0 40px #38bdf8;
     }
 
     .project img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
+      border-radius: 16px;
       object-fit: cover;
-      border-radius: 12px;
-      border: 1px solid #1e293b;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 20px #22c55e;
     }
 
     .project:hover img {
-      transform: scale(1.08);
+      transform: scale(1.15) rotate(-2deg);
+      box-shadow: 0 0 35px #22c55e;
+    }
+
+    /* ===== MINECRAFT GLOW ===== */
+    .minecraft {
+      animation: minecraftGlow 4s infinite;
+    }
+
+    @keyframes minecraftGlow {
+      0% { box-shadow: 0 0 15px #22c55e; }
+      50% { box-shadow: 0 0 35px #22c55e; }
+      100% { box-shadow: 0 0 15px #22c55e; }
     }
 
     footer {
       text-align: center;
-      opacity: 0.6;
+      opacity: 0.7;
       margin-top: 40px;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>👋 Hola, soy Fernando</h1>
-    <p>Developer nivel medio • Bots • Minecraft</p>
+<header>
+  <h1>⚡ FerHdzG</h1>
+  <p>Developer • Bots • Minecraft</p>
+  <div>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Node.js</span>
+    <span class="tag">Discord Bots</span>
+    <span class="tag">Minecraft</span>
+  </div>
+</header>
+
+<section>
+  <h2>🧠 Sobre mí</h2>
+  <p>
+    Developer nivel medio con experiencia en bots de Discord
+    y creación de servidores de Minecraft.
+    Desarrollo sistemas reales usados en comunidades activas.
+  </p>
+</section>
+
+<section>
+  <h2>🤖 Proyecto Principal</h2>
+
+  <div class="project">
+    <img src="img/jockercontrol.png">
     <div>
-      <span class="tag">JavaScript</span>
-      <span class="tag">Node.js</span>
-      <span class="tag">Discord Bots</span>
-      <span class="tag">Minecraft</span>
+      <h3>JockerControl</h3>
+      <p>
+        Bot de Discord para administración, automatización
+        e integración con servidores de Minecraft.
+      </p>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section>
-    <h2>🧠 Sobre mí</h2>
-    <p>
-      Soy un desarrollador de nivel medio enfocado en la creación de
-      bots de Discord y en el desarrollo y gestión de
-      <strong>servidores de Minecraft</strong>.
-      He trabajado en múltiples comunidades creando sistemas,
-      automatización y herramientas para staff.
-    </p>
-  </section>
+<section>
+  <h2>⛏️ Servidores de Minecraft</h2>
 
-  <section>
-    <h2>🛠️ Habilidades</h2>
-    <ul>
-      <li>JavaScript (Node.js)</li>
-      <li>Desarrollo de bots de Discord</li>
-      <li>HTML & CSS</li>
-      <li>Automatización</li>
-      <li>Gestión y creación de servidores de Minecraft</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>🤖 Proyecto Destacado</h2>
-
-    <div class="project">
-      <img src="img/jockercontrol.png" alt="JockerControl">
-      <div>
-        <h3>JockerControl</h3>
-        <p>
-          Bot de Discord creado para servidores de Minecraft,
-          enfocado en control administrativo, automatización
-          y soporte a comunidades.
-        </p>
-        <span class="tag">Activo</span>
-        <span class="tag">Privado</span>
-      </div>
+  <div class="project minecraft">
+    <img src="img/lunaticmc.png">
+    <div>
+      <h3>LunaticMC</h3>
+      <p>Desarrollo de sistemas, bots y soporte técnico.</p>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>⛏️ Servidores de Minecraft</h2>
-
-    <div class="project">
-      <img src="img/lunaticmc.png" alt="LunaticMC">
-      <div>
-        <h3>LunaticMC</h3>
-        <p>Desarrollo de sistemas, bots de Discord y soporte técnico.</p>
-      </div>
+  <div class="project minecraft">
+    <img src="img/crazycubes.png">
+    <div>
+      <h3>CrazyCubes</h3>
+      <p>Configuración y desarrollo del servidor.</p>
     </div>
+  </div>
 
-    <div class="project">
-      <img src="img/crazycubes.png" alt="CrazyCubes">
-      <div>
-        <h3>CrazyCubes</h3>
-        <p>Creación y configuración del servidor y sistemas internos.</p>
-      </div>
+  <div class="project minecraft">
+    <img src="img/minemytic.png">
+    <div>
+      <h3>MineMytic</h3>
+      <p>Estructura del servidor y herramientas administrativas.</p>
     </div>
+  </div>
 
-    <div class="project">
-      <img src="img/minemytic.png" alt="MineMytic">
-      <div>
-        <h3>MineMytic</h3>
-        <p>Apoyo en desarrollo, estructura y herramientas administrativas.</p>
-      </div>
+  <div class="project minecraft">
+    <img src="img/hylexmc.png">
+    <div>
+      <h3>HylexMC</h3>
+      <p>Gestión e integración Discord.</p>
     </div>
+  </div>
+</section>
 
-    <div class="project">
-      <img src="img/hylexmc.png" alt="HylexMC">
-      <div>
-        <h3>HylexMC</h3>
-        <p>Gestión del servidor e integración Discord.</p>
-      </div>
-    </div>
-  </section>
+<section>
+  <h2>📞 Contacto</h2>
+  <p>GitHub: <a href="https://github.com/FerHdzG" target="_blank">FerHdzG</a></p>
+  <p>Discord: JockerControl</p>
+</section>
 
-  <section>
-    <h2>📞 Contacto</h2>
-    <p>GitHub: <a href="https://github.com/FerHdzG" target="_blank">FerHdzG</a></p>
-    <p>Discord: JockerControl / Comunidades Minecraft</p>
-  </section>
-
-  <footer>
-    <p>© 2025 FerHdzG — Developer & Minecraft</p>
-  </footer>
+<footer>
+  <p>© 2025 FerHdzG — Gamer Dev</p>
+</footer>
 
 </body>
 </html>
