@@ -155,6 +155,25 @@
     });
   });
 </script>
+
+<script>
+  // 🎵 Control de música (autoplay bloqueado por navegadores, se usa botón)
+  const music = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  let playing = false;
+
+  musicBtn.addEventListener('click', () => {
+    if (!playing) {
+      music.volume = 0.3; // volumen suave
+      music.play();
+      musicBtn.textContent = '🔇 Pause Music';
+    } else {
+      music.pause();
+      musicBtn.textContent = '🎵 Play Music';
+    }
+    playing = !playing;
+  });
+</script>
 </head>
 
 <body>
@@ -176,6 +195,16 @@
     <button id="langToggle" class="btn accent">English</button>
   </div>
 </header>
+
+<!-- 🎵 Música de fondo (control manual) -->
+<div id="musicControl" style="position:fixed;bottom:20px;right:20px;z-index:999;">
+  <button id="musicBtn" class="btn accent">🎵 Play Music</button>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="music/background.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
 
 <section>
   <h2>🧠 Sobre mí</h2>
