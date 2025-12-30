@@ -1,172 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | FerHdzG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | FerHdzG</title>
 
-  <!-- SEO básico -->
-  <meta name="description" content="FerHdzG — Desarrollador especializado en bots de Discord, automatización y sistemas para servidores de Minecraft. Experiencia comprobada con servidores activos.">
-  <meta name="keywords" content="Discord bots, Minecraft developer, Node.js, Discord.js, sistemas de tickets, HCF, Minecraft servers">
-  <meta name="author" content="FerHdzG">
+  <meta name="description" content="FerHdzG — Developer specialized in Discord bots and Minecraft server systems." />
 
   <style>
-    :root {
-      --bg-main: #020617;
-      --bg-dark: #000000;
-      --primary: #38bdf8;
-      --secondary: #22c55e;
-      --accent: #a855f7;
-      --text-main: #e5e7eb;
-      --radius: 18px;
+    :root{
+      --bg:#020617;--bg2:#000;--p:#38bdf8;--s:#22c55e;--a:#a855f7;--t:#e5e7eb;--r:18px;
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: radial-gradient(circle at top, var(--bg-main), var(--bg-dark));
-      color: var(--text-main);
-      padding: 20px;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes rgbGlow {
-      0% { box-shadow: 0 0 15px var(--primary); }
-      50% { box-shadow: 0 0 30px var(--secondary); }
-      100% { box-shadow: 0 0 15px var(--primary); }
-    }
-
-    header, section, footer { animation: fadeUp 1s ease forwards; }
-
-    header { text-align: center; margin-bottom: 50px; }
-    header h1 { font-size: 44px; color: var(--primary); text-shadow: 0 0 25px var(--primary); }
-
-    .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-    .tag { background: var(--bg-main); padding: 6px 14px; border-radius: 999px; font-size: 13px; box-shadow: 0 0 10px var(--primary); }
-
-    .btn {
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: var(--primary);
-      color: #000;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      transition: transform .3s, box-shadow .3s;
-    }
-
-    .btn:hover { transform: scale(1.08); box-shadow: 0 0 20px var(--primary); }
-    .btn.secondary { background: var(--secondary); }
-    .btn.accent { background: var(--accent); color:#fff; }
-
-    section { background: #020617; padding: 28px; margin-bottom: 35px; border-radius: var(--radius); }
-    section h2 { color: var(--secondary); text-shadow: 0 0 12px var(--secondary); }
-
-    .project {
-      display: flex; gap: 22px; align-items: center; padding: 18px;
-      border-radius: 16px; margin-bottom: 22px;
-      transition: transform .4s, box-shadow .4s;
-    }
-
-    .project:hover { transform: scale(1.04); animation: rgbGlow 3s infinite; }
-
-    /* Hover especial para logos pequeños (testimonios) */
-    .testimonio:hover img { transform: scale(1.1); }
-
-    .project img {
-      width: 130px; height: 130px; border-radius: 16px; object-fit: cover;
-      box-shadow: 0 0 18px var(--secondary);
-    }
-
-    /* Logos pequeños solo para testimonios */
-    .testimonio img {
-      width: 64px;
-      height: 64px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px var(--secondary);
-    }
-
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
-    .skill { background: var(--bg-main); padding: 16px; border-radius: 14px; text-align: center; box-shadow: 0 0 14px var(--primary); }
-
-    footer { text-align: center; opacity: .7; margin-top: 40px; font-size: 14px; }
-
-    @media (max-width:768px){
-      .project{flex-direction:column; text-align:center;}
-      header h1{font-size:34px;}
-    } }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui;background:radial-gradient(circle at top,var(--bg),var(--bg2));color:var(--t);padding:20px}
+    header,section,footer{animation:fadeUp 1s ease}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+    header{text-align:center;margin-bottom:40px}
+    h1{font-size:42px;color:var(--p);text-shadow:0 0 25px var(--p)}
+    h2{color:var(--s);text-shadow:0 0 12px var(--s)}
+    .tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .tag{background:var(--bg);padding:6px 14px;border-radius:999px;box-shadow:0 0 10px var(--p);font-size:13px}
+    .btn{padding:10px 18px;border-radius:999px;background:var(--p);color:#000;font-weight:700;border:none;cursor:pointer}
+    .btn.accent{background:var(--a);color:#fff}
+    .btn.secondary{background:var(--s)}
+    section{background:#020617;padding:26px;border-radius:var(--r);margin-bottom:30px}
+    .project{display:flex;gap:20px;align-items:center;margin-bottom:20px}
+    .project img{width:130px;height:130px;border-radius:16px;object-fit:cover;box-shadow:0 0 18px var(--s)}
+    .testimonio img{width:64px;height:64px}
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+    .skill{background:var(--bg);padding:16px;border-radius:14px;box-shadow:0 0 14px var(--p);text-align:center}
+    footer{text-align:center;opacity:.7;margin-top:40px}
+    @media(max-width:768px){.project{flex-direction:column;text-align:center}}
   </style>
+</head>
+<body>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+  <source src="music/background.mp3" type="audio/mpeg" />
+</audio>
+
+<div id="musicPanel" style="position:fixed;bottom:20px;right:20px;background:#020617;padding:14px;border-radius:16px;box-shadow:0 0 20px #38bdf8;z-index:999">
+  <button id="musicBtn" class="btn accent" data-i18n="music_play">🎵 Play</button>
+  <input id="vol" type="range" min="0" max="1" step="0.01" />
+</div>
+
+<header>
+  <h1>⚡ FerHdzG</h1>
+  <p data-i18n="hero"></p>
+  <div class="tags">
+    <span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Discord.js</span><span class="tag">Minecraft</span>
+  </div>
+  <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button id="langBtn" class="btn accent">English</button>
+  </div>
+</header>
+
+<section>
+  <h2 data-i18n="about_title"></h2>
+  <p data-i18n="about_text"></p>
+</section>
+
+<section>
+  <h2 data-i18n="numbers_title"></h2>
+  <div class="skills">
+    <div class="skill" data-i18n="n1"></div>
+    <div class="skill" data-i18n="n2"></div>
+    <div class="skill" data-i18n="n3"></div>
+    <div class="skill" data-i18n="n4"></div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="project_main"></h2>
+  <div class="project">
+    <img src="img/jockercontrol.png" />
+    <div>
+      <h3>JockerControl</h3>
+      <p data-i18n="jocker_desc"></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="servers"></h2>
+  <div class="project"><img src="img/lunaticmc.png" /><div><h3>LunaticMC</h3><p data-i18n="lunatic"></p></div></div>
+  <div class="project"><img src="img/crazycubes.png" /><div><h3>CrazyCubes</h3><p data-i18n="crazy"></p></div></div>
+  <div class="project"><img src="img/minemytic.png" /><div><h3>MineMytic</h3><p data-i18n="mine"></p></div></div>
+  <div class="project"><img src="img/hylexmc.png" /><div><h3>HylexMC</h3><p data-i18n="hylex"></p></div></div>
+</section>
+
+<section>
+  <h2 data-i18n="testi"></h2>
+  <div class="project testimonio"><img src="img/minemytic.png" /><div><h3>MrTerde</h3><p data-i18n="t1"></p></div></div>
+  <div class="project testimonio"><img src="img/hylexmc.png" /><div><h3>IronHeal</h3><p data-i18n="t2"></p></div></div>
+  <div class="project testimonio"><img src="img/rivallatam.png" /><div><h3>Owen</h3><p data-i18n="t3"></p></div></div>
+</section>
+
+<section id="contacto">
+  <h2 data-i18n="contact"></h2>
+  <p>Discord: <strong>FerHdz</strong></p>
+  <p>Email: hegf0408@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2025 FerHdzG</p>
+</footer>
 
 <script>
-// ===== MÚSICA =====
-const music = document.getElementById('bg-music');
-const musicBtn = document.getElementById('music-btn');
-const volume = document.getElementById('volume');
-
-let playing = localStorage.getItem('musicPlaying') === 'true';
-let savedVolume = localStorage.getItem('musicVolume') || 0.25;
-
-music.volume = savedVolume;
-volume.value = savedVolume;
-
-if (playing) {
-  music.play().catch(()=>{});
-  musicBtn.textContent = '⏸️ Pausar música';
-}
-
-musicBtn.onclick = () => {
-  if (!playing) {
-    music.play();
-    musicBtn.textContent = '⏸️ Pausar música';
-  } else {
-    music.pause();
-    musicBtn.textContent = '🎵 Reproducir música';
-  }
-  playing = !playing;
-  localStorage.setItem('musicPlaying', playing);
+const dict={
+ es:{hero:'Desarrollador • Bots de Discord • Sistemas de Minecraft',about_title:'🧠 Sobre mí',about_text:'Desarrollador especializado en bots de Discord y sistemas para servidores de Minecraft.',numbers_title:'📊 Números',n1:'+5 Servidores',n2:'+1000 Usuarios',n3:'+10 Sistemas',n4:'100% Funcional',project_main:'🤖 Proyecto principal',jocker_desc:'Bot profesional de Discord con sistemas avanzados.',servers:'⛏️ Servidores de Minecraft',lunatic:'Desarrollo y soporte',crazy:'Configuración y sistemas',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonios',t1:'Excelente trabajo',t2:'Muy profesional',t3:'Altamente recomendado',contact:'📞 Contacto',music_play:'🎵 Reproducir',music_pause:'⏸️ Pausar'},
+ en:{hero:'Developer • Discord Bots • Minecraft Systems',about_title:'🧠 About me',about_text:'Developer specialized in Discord bots and Minecraft server systems.',numbers_title:'📊 Numbers',n1:'+5 Servers',n2:'+1000 Users',n3:'+10 Systems',n4:'100% Functional',project_main:'🤖 Main project',jocker_desc:'Professional Discord bot with advanced systems.',servers:'⛏️ Minecraft Servers',lunatic:'Development and support',crazy:'Configuration and systems',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonials',t1:'Excellent work',t2:'Very professional',t3:'Highly recommended',contact:'📞 Contact',music_play:'🎵 Play',music_pause:'⏸️ Pause'}
 };
+let lang=localStorage.getItem('lang')||'es';
+function apply(){document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=dict[lang][e.dataset.i18n]);document.getElementById('langBtn').textContent=lang==='es'?'English':'Español'}
+document.getElementById('langBtn').onclick=()=>{lang=lang==='es'?'en':'es';localStorage.setItem('lang',lang);apply()};apply();
 
-volume.oninput = () => {
-  music.volume = volume.value;
-  localStorage.setItem('musicVolume', volume.value);
-};
-
-// ===== IDIOMA =====
-const langBtn = document.getElementById('langToggle');
-let lang = localStorage.getItem('lang') || 'es';
-
-const i18n = {
-  es: {
-    hero: 'Desarrollador • Bots de Discord • Sistemas de Minecraft',
-    about: 'Desarrollador especializado en bots de Discord y sistemas para servidores de Minecraft.',
-    contact: '📞 Contacto'
-  },
-  en: {
-    hero: 'Developer • Discord Bots • Minecraft Systems',
-    about: 'Developer specialized in Discord bots and systems for Minecraft servers.',
-    contact: '📞 Contact'
-  }
-};
-
-function applyLang(){
-  document.querySelector('header p').textContent = i18n[lang].hero;
-  document.querySelector('section p').textContent = i18n[lang].about;
-  document.getElementById('contacto').querySelector('h2').textContent = i18n[lang].contact;
-  langBtn.textContent = lang === 'es' ? 'English' : 'Español';
-}
-
-langBtn.onclick = () => {
-  lang = lang === 'es' ? 'en' : 'es';
-  localStorage.setItem('lang', lang);
-  applyLang();
-};
-
-applyLang();
+const music=document.getElementById('music');const btn=document.getElementById('musicBtn');const vol=document.getElementById('vol');let play=localStorage.getItem('play')==='1';music.volume=localStorage.getItem('vol')||0.25;vol.value=music.volume;if(play)music.play();btn.onclick=()=>{if(!play){music.play();btn.textContent=dict[lang].music_pause}else{music.pause();btn.textContent=dict[lang].music_play}play=!play;localStorage.setItem('play',play?1:0)};vol.oninput=()=>{music.volume=vol.value;localStorage.setItem('vol',vol.value)};
 </script>
 </body>
+</html>
