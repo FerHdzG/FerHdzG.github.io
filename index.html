@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | FerHdzG</title>
-  <meta name="description" content="FerHdzG — Developer specialized in Discord bots and Minecraft server systems." />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio | FerHdzG</title>
+<meta name="description" content="FerHdzG — Developer specialized in Discord bots and Minecraft server systems." />
 
-  <style>
-    :root{
-      --bg:#020617;--bg2:#000;--p:#38bdf8;--s:#22c55e;--a:#a855f7;--t:#e5e7eb;--r:18px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui;
-      background:radial-gradient(circle at top,var(--bg),var(--bg2));
-      color:var(--t);
-      padding:20px;
-      overflow-x:hidden;
-    } 
-    #bg{position:fixed;inset:0;z-index:-1}
-    header,section,footer{animation:fadeUp 1s ease}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
-    header{text-align:center;margin-bottom:40px}
-    h1{font-size:42px;color:var(--p);text-shadow:0 0 25px var(--p)}
-    h2{color:var(--s);text-shadow:0 0 12px var(--s)}
-    .tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .tag{background:var(--bg);padding:6px 14px;border-radius:999px;box-shadow:0 0 10px var(--p);font-size:13px}
-    .btn{padding:10px 18px;border-radius:999px;background:var(--p);color:#000;font-weight:700;border:none;cursor:pointer}
-    .btn.accent{background:var(--a);color:#fff}
-    .btn.secondary{background:var(--s)}
-    section{background:#020617;padding:26px;border-radius:var(--r);margin-bottom:30px;transition:.4s ease}
-    .project{
-      display:flex;
-      gap:20px;
-      align-items:center;
-      margin-bottom:20px;
-      opacity:0;
-      transform:translateY(40px);
-      transition:.6s ease;
-    }
-    .project img{width:130px;height:130px;border-radius:16px;object-fit:cover;box-shadow:0 0 18px var(--s);transition:.4s ease}
-    .project img:hover{transform:scale(1.1) rotate(-2deg)}
-    .testimonio img{width:64px;height:64px}
-    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
-    .skill{background:var(--bg);padding:16px;border-radius:14px;box-shadow:0 0 14px var(--p);text-align:center}
-    footer{text-align:center;opacity:.7;margin-top:40px}
-    @media(max-width:768px){.project{flex-direction:column;text-align:center}}
+<style>
+:root{
+  --bg:#020617; --bg2:#000; --p:#38bdf8; --s:#22c55e; --a:#a855f7; --t:#e5e7eb; --r:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui;
+  background:radial-gradient(circle at top,var(--bg),var(--bg2));
+  color:var(--t);
+  padding:20px;
+  overflow-x:hidden;
+} 
+#bg{position:fixed;inset:0;z-index:-1}
+header,section,footer{animation:fadeUp 1s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+header{text-align:center;margin-bottom:40px}
+h1{font-size:42px;color:var(--p);text-shadow:0 0 25px var(--p)}
+h2{color:var(--s);text-shadow:0 0 12px var(--s)}
+.tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tag{background:var(--bg);padding:6px 14px;border-radius:999px;box-shadow:0 0 10px var(--p);font-size:13px}
+.btn{padding:10px 18px;border-radius:999px;background:var(--p);color:#000;font-weight:700;border:none;cursor:pointer;transition:.3s ease}
+.btn.accent{background:var(--a);color:#fff}
+.btn.secondary{background:var(--s)}
+section{background:#020617;padding:26px;border-radius:var(--r);margin-bottom:30px;transition:.4s ease}
+.project{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-bottom:20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s ease;
+}
+.project img{width:130px;height:130px;border-radius:16px;object-fit:cover;box-shadow:0 0 18px var(--s);transition:.4s ease}
+.project img:hover{transform:scale(1.1) rotate(-2deg)}
+.testimonio img{width:64px;height:64px;border-radius:50%;object-fit:cover;margin-right:12px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.skill{background:var(--bg);padding:16px;border-radius:14px;box-shadow:0 0 14px var(--p);text-align:center}
+.stars{color:#facc15;margin-bottom:6px;font-size:16px;display:inline-block;transition:.3s ease}
+.project.testimonio:hover .stars{transform:scale(1.2);text-shadow:0 0 8px #facc15;}
+footer{text-align:center;opacity:.7;margin-top:40px}
+@media(max-width:768px){
+  .project{flex-direction:column;text-align:center}
+  .project.testimonio{flex-direction:column;text-align:center}
+  .project.testimonio img{margin-right:0;margin-bottom:6px}
+  .stars{font-size:18px}
+}
 
-    /* Animaciones extra */
-    @keyframes float {0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    @keyframes glow {0%{box-shadow:0 0 15px var(--p)}50%{box-shadow:0 0 35px var(--a)}100%{box-shadow:0 0 15px var(--p)}}
-    header h1{animation:float 4s ease-in-out infinite}
-    section:hover{transform:translateY(-6px);animation:glow 3s infinite}
-    .btn{transition:.3s ease}
-    .btn:hover{transform:scale(1.12)}
-  </style>
+/* Animaciones extra */
+@keyframes float {0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+@keyframes glow {0%{box-shadow:0 0 15px var(--p)}50%{box-shadow:0 0 35px var(--a)}100%{box-shadow:0 0 15px var(--p)}}
+header h1{animation:float 4s ease-in-out infinite}
+section:hover{transform:translateY(-6px);animation:glow 3s infinite}
+.btn:hover{transform:scale(1.12)}
+</style>
 </head>
 <body>
 <canvas id="bg"></canvas>
@@ -119,9 +125,33 @@
 
 <section>
   <h2 data-i18n="testi"></h2>
-  <div class="project testimonio"><img src="img/minemytic.png" /><div><h3>MrTerde</h3><p data-i18n="t1"></p></div></div>
-  <div class="project testimonio"><img src="img/hylexmc.png" /><div><h3>IronHeal</h3><p data-i18n="t2"></p></div></div>
-  <div class="project testimonio"><img src="img/rivallatam.png" /><div><h3>Owen</h3><p data-i18n="t3"></p></div></div>
+
+  <div class="project testimonio">
+    <div class="stars">★★★★★</div>
+    <img src="img/minemytic.png" />
+    <div>
+      <h3>MrTerde</h3>
+      <p data-i18n="t1"></p>
+    </div>
+  </div>
+
+  <div class="project testimonio">
+    <div class="stars">★★★★★</div>
+    <img src="img/hylexmc.png" />
+    <div>
+      <h3>IronHeal</h3>
+      <p data-i18n="t2"></p>
+    </div>
+  </div>
+
+  <div class="project testimonio">
+    <div class="stars">★★★★★</div>
+    <img src="img/rivallatam.png" />
+    <div>
+      <h3>Owen</h3>
+      <p data-i18n="t3"></p>
+    </div>
+  </div>
 </section>
 
 <section id="contacto">
