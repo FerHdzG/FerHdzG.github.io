@@ -25,7 +25,7 @@
 
     h2 {
       color: #22c55e;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     section {
@@ -35,17 +35,17 @@
       border-radius: 14px;
     }
 
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
     ul {
       padding-left: 20px;
     }
 
     li {
-      margin-bottom: 12px;
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
+      margin-bottom: 10px;
     }
 
     .tag {
@@ -56,6 +56,23 @@
       font-size: 13px;
       margin-right: 6px;
       margin-top: 6px;
+    }
+
+    /* === PROYECTOS CON IMÁGENES === */
+    .project {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .project img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid #1e293b;
     }
 
     footer {
@@ -84,8 +101,8 @@
     <p>
       Soy un desarrollador de nivel medio enfocado en la creación de
       bots de Discord, automatización y herramientas para servidores
-      de <strong>Minecraft</strong>. Tengo experiencia trabajando con
-      comunidades y sistemas de control para staff y jugadores.
+      de <strong>Minecraft</strong>. Trabajo con proyectos reales
+      orientados a comunidades.
     </p>
   </section>
 
@@ -94,8 +111,8 @@
     <ul>
       <li>
         <strong>Developer — LunaticMC</strong><br>
-        Desarrollo de bots, automatización de tareas, soporte a staff
-        e integración Discord ↔ Minecraft.
+        Desarrollo de bots, automatización de tareas e integración
+        Discord ↔ Minecraft.
       </li>
     </ul>
   </section>
@@ -106,44 +123,42 @@
       <li>HTML & CSS (intermedio)</li>
       <li>JavaScript (intermedio)</li>
       <li>Node.js</li>
-      <li>Desarrollo de bots de Discord</li>
-      <li>Sistemas de moderación y control</li>
+      <li>Bots de Discord</li>
+      <li>Automatización</li>
       <li>Gestión de servidores de Minecraft</li>
     </ul>
   </section>
 
   <section>
     <h2>📂 Proyectos</h2>
-    <ul>
-      <li>
-        <strong>🌐 Portafolio personal</strong><br>
-        Página web desarrollada con HTML, CSS y GitHub Pages.<br>
-        <a href="https://github.com/FerHdzG/FerHdzG.github.io" target="_blank">
-          Ver repositorio
-        </a>
-      </li>
 
-      <li>
-        <strong>🤖 JockerControl</strong><br>
-        Bot de Discord desarrollado para el servidor de Minecraft
-        <strong>LunaticMC</strong>.
-        <ul>
-          <li>Control y gestión administrativa</li>
-          <li>Automatización de tareas del staff</li>
-          <li>Soporte y organización de la comunidad</li>
-        </ul>
+    <div class="project">
+      <img src="img/jockercontrol.png" alt="JockerControl">
+      <div>
+        <h3>🤖 JockerControl</h3>
+        <p>
+          Bot de Discord desarrollado para el servidor de Minecraft
+          <strong>LunaticMC</strong>, enfocado en control administrativo,
+          automatización y soporte a la comunidad.
+        </p>
         <span class="tag">Proyecto activo</span>
-      </li>
-    </ul>
-  </section>
+        <span class="tag">Código privado</span>
+      </div>
+    </div>
 
-  <section>
-    <h2>🎮 Minecraft</h2>
-    <p>
-      Experiencia en la gestión de servidores de Minecraft, desarrollo
-      de sistemas personalizados, integración con Discord y creación
-      de herramientas para mejorar la experiencia de los jugadores.
-    </p>
+    <div class="project">
+      <img src="img/lunaticmc.png" alt="LunaticMC">
+      <div>
+        <h3>⛏️ LunaticMC</h3>
+        <p>
+          Servidor de Minecraft con integración Discord,
+          sistemas personalizados y herramientas de gestión.
+        </p>
+        <span class="tag">Minecraft</span>
+        <span class="tag">Producción</span>
+      </div>
+    </div>
+
   </section>
 
   <section>
