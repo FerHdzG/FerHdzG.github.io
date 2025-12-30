@@ -12,7 +12,8 @@
       --bg:#020617;--bg2:#000;--p:#38bdf8;--s:#22c55e;--a:#a855f7;--t:#e5e7eb;--r:18px;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui;background:radial-gradient(circle at top,var(--bg),var(--bg2));color:var(--t);padding:20px}
+    body{margin:0;font-family:system-ui;background:radial-gradient(circle at top,var(--bg),var(--bg2));color:var(--t);padding:20px;overflow-x:hidden} 
+#bg{position:fixed;inset:0;z-index:-1}
     header,section,footer{animation:fadeUp 1s ease}
     @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
     header{text-align:center;margin-bottom:40px}
@@ -24,7 +25,7 @@
     .btn.accent{background:var(--a);color:#fff}
     .btn.secondary{background:var(--s)}
     section{background:#020617;padding:26px;border-radius:var(--r);margin-bottom:30px}
-    .project{display:flex;gap:20px;align-items:center;margin-bottom:20px}
+    .project{display:flex;gap:20px;align-items:center;margin-bottom:20px;opacity:0;transform:translateY(40px);transition:.6s ease}
     .project img{width:130px;height:130px;border-radius:16px;object-fit:cover;box-shadow:0 0 18px var(--s)}
     .testimonio img{width:64px;height:64px}
     .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
@@ -49,6 +50,7 @@ section:hover{transform:translateY(-6px);animation:glow 3s infinite}
 </style>
 </head>
 <body>
+<canvas id="bg"></canvas>
 
 <!-- AUDIO -->
 <audio id="music" loop>
@@ -74,6 +76,8 @@ section:hover{transform:translateY(-6px);animation:glow 3s infinite}
 <section>
   <h2 data-i18n="about_title"></h2>
   <p data-i18n="about_text"></p>
+  <p data-i18n="about_text2"></p>
+  <p data-i18n="about_text3"></p>
 </section>
 
 <section>
@@ -124,6 +128,8 @@ section:hover{transform:translateY(-6px);animation:glow 3s infinite}
 
 <script>
 const dict={
+ es:{hero:'Desarrollador • Bots de Discord • Sistemas de Minecraft',about_title:'🧠 Sobre mí',about_text:'Desarrollador con enfoque en soluciones reales para comunidades activas.',about_text2:'Trabajo principalmente con JavaScript y Node.js creando bots de Discord avanzados, sistemas de tickets, moderación y automatización.',about_text3:'También tengo experiencia configurando y gestionando servidores de Minecraft, integrando Discord y optimizando la experiencia del usuario.',numbers_title:'📊 Números',n1:'Servidores',n2:'Usuarios',n3:'Sistemas',n4:'Funcional',project_main:'🤖 Proyecto principal',jocker_desc:'Bot profesional de Discord con sistemas avanzados y escalables.',servers:'⛏️ Servidores de Minecraft',lunatic:'Desarrollo y soporte',crazy:'Configuración y sistemas',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonios',t1:'Excelente trabajo y comunicación.',t2:'Muy profesional y confiable.',t3:'Altamente recomendado.',contact:'📞 Contacto',music_play:'🎵 Reproducir',music_pause:'⏸️ Pausar'},
+ en:{hero:'Developer • Discord Bots • Minecraft Systems',about_title:'🧠 About me',about_text:'Developer focused on real solutions for active communities.',about_text2:'I mainly work with JavaScript and Node.js creating advanced Discord bots, ticket systems, moderation and automation.',about_text3:'I also have experience setting up and managing Minecraft servers, integrating Discord and improving user experience.',numbers_title:'📊 Numbers',n1:'Servers',n2:'Users',n3:'Systems',n4:'Functional',project_main:'🤖 Main project',jocker_desc:'Professional Discord bot with advanced and scalable systems.',servers:'⛏️ Minecraft Servers',lunatic:'Development and support',crazy:'Configuration and systems',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonials',t1:'Excellent work and communication.',t2:'Very professional and reliable.',t3:'Highly recommended.',contact:'📞 Contact',music_play:'🎵 Play',music_pause:'⏸️ Pause'}
  es:{hero:'Desarrollador • Bots de Discord • Sistemas de Minecraft',about_title:'🧠 Sobre mí',about_text:'Desarrollador especializado en bots de Discord y sistemas para servidores de Minecraft.',numbers_title:'📊 Números',n1:'+5 Servidores',n2:'+1000 Usuarios',n3:'+10 Sistemas',n4:'100% Funcional',project_main:'🤖 Proyecto principal',jocker_desc:'Bot profesional de Discord con sistemas avanzados.',servers:'⛏️ Servidores de Minecraft',lunatic:'Desarrollo y soporte',crazy:'Configuración y sistemas',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonios',t1:'Excelente trabajo',t2:'Muy profesional',t3:'Altamente recomendado',contact:'📞 Contacto',music_play:'🎵 Reproducir',music_pause:'⏸️ Pausar'},
  en:{hero:'Developer • Discord Bots • Minecraft Systems',about_title:'🧠 About me',about_text:'Developer specialized in Discord bots and Minecraft server systems.',numbers_title:'📊 Numbers',n1:'+5 Servers',n2:'+1000 Users',n3:'+10 Systems',n4:'100% Functional',project_main:'🤖 Main project',jocker_desc:'Professional Discord bot with advanced systems.',servers:'⛏️ Minecraft Servers',lunatic:'Development and support',crazy:'Configuration and systems',mine:'Owner: MrTerde',hylex:'Manager: IronHeal',testi:'⭐ Testimonials',t1:'Excellent work',t2:'Very professional',t3:'Highly recommended',contact:'📞 Contact',music_play:'🎵 Play',music_pause:'⏸️ Pause'}
 };
@@ -137,6 +143,18 @@ const counters=document.querySelectorAll('[data-count]');
 const runCounters=()=>{counters.forEach(el=>{let t=+el.dataset.count,c=0,step=Math.max(1,Math.floor(t/60));const i=setInterval(()=>{c+=step;if(c>=t){c=t;clearInterval(i)}el.textContent=c+(t===100?'%':'+')},30)})};
 const obs=new IntersectionObserver(e=>{if(e[0].isIntersecting){runCounters();obs.disconnect()}},{threshold:.5});
 obs.observe(document.getElementById('stats'));
+
+// 🎬 Project & server reveal animation
+const reveal=document.querySelectorAll('.project');
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none'}})},{threshold:.3});
+reveal.forEach(el=>ro.observe(el));
+
+// 🌌 Subtle animated background
+const c=document.getElementById('bg'),ctx=c.getContext('2d');let w,h,pts=[];
+function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+window.onresize=resize;resize();
+for(let i=0;i<60;i++)pts.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3});
+function draw(){ctx.clearRect(0,0,w,h);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.fillStyle='rgba(56,189,248,.25)';ctx.beginPath();ctx.arc(p.x,p.y,1.5,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}draw();
 
 </script>
 </body>
