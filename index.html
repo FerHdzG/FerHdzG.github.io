@@ -6,7 +6,8 @@
   <title>Portafolio | FerHdzG</title>
 
   <!-- SEO básico -->
-  <meta name="description" content="FerHdzG — Developer especializado en bots de Discord y sistemas para servidores de Minecraft.">
+  <meta name="description" content="FerHdzG — Desarrollador especializado en bots de Discord, automatización y sistemas para servidores de Minecraft. Experiencia comprobada con servidores activos.">
+  <meta name="keywords" content="Discord bots, Minecraft developer, Node.js, Discord.js, sistemas de tickets, HCF, Minecraft servers">
   <meta name="author" content="FerHdzG">
 
   <style>
@@ -75,6 +76,9 @@
 
     .project:hover { transform: scale(1.04); animation: rgbGlow 3s infinite; }
 
+    /* Hover especial para logos pequeños (testimonios) */
+    .testimonio:hover img { transform: scale(1.1); }
+
     .project img {
       width: 130px; height: 130px; border-radius: 16px; object-fit: cover;
       box-shadow: 0 0 18px var(--secondary);
@@ -93,8 +97,64 @@
 
     footer { text-align: center; opacity: .7; margin-top: 40px; font-size: 14px; }
 
-    @media (max-width:768px){ .project{flex-direction:column; text-align:center;} }
+    @media (max-width:768px){
+      .project{flex-direction:column; text-align:center;}
+      header h1{font-size:34px;}
+    } }
   </style>
+
+<script>
+  const translations = {
+    es: {
+      title: "Desarrollador • Bots de Discord • Sistemas de Minecraft",
+      aboutTitle: "🧠 Sobre mí",
+      aboutText: "Desarrollador especializado en bots de Discord y sistemas para servidores de Minecraft. He trabajado con comunidades reales, creando soluciones estables y fáciles de usar, enfocadas en mejorar la organización, moderación y experiencia de los jugadores.",
+      numbersTitle: "📊 Números que me respaldan",
+      projectTitle: "🤖 Proyecto Principal",
+      serversTitle: "⛏️ Servidores de Minecraft",
+      skillsTitle: "🛠️ Habilidades",
+      testimonialsTitle: "⭐ Testimonios",
+      contactTitle: "📞 Contacto",
+      footer: "Disponible para proyectos freelance y colaboraciones"
+    },
+    en: {
+      title: "Developer • Discord Bots • Minecraft Systems",
+      aboutTitle: "🧠 About Me",
+      aboutText: "Developer specialized in Discord bots and Minecraft server systems. Experience working with real communities, creating stable, scalable and easy-to-use solutions.",
+      numbersTitle: "📊 Numbers That Support My Work",
+      projectTitle: "🤖 Main Project",
+      serversTitle: "⛏️ Minecraft Servers",
+      skillsTitle: "🛠️ Skills",
+      testimonialsTitle: "⭐ Testimonials",
+      contactTitle: "📞 Contact",
+      footer: "Available for freelance projects and collaborations"
+    }
+  };
+
+  let currentLang = "es";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("langToggle");
+    btn.addEventListener("click", () => {
+      currentLang = currentLang === "es" ? "en" : "es";
+      btn.textContent = currentLang === "es" ? "English" : "Español";
+
+      document.querySelector("header p").textContent = translations[currentLang].title;
+      document.querySelector("section h2").textContent = translations[currentLang].aboutTitle;
+      document.querySelector("section p").textContent = translations[currentLang].aboutText;
+
+      const h2s = document.querySelectorAll("section h2");
+      h2s[1].textContent = translations[currentLang].numbersTitle;
+      h2s[2].textContent = translations[currentLang].projectTitle;
+      h2s[3].textContent = translations[currentLang].serversTitle;
+      h2s[4].textContent = translations[currentLang].skillsTitle;
+      h2s[5].textContent = translations[currentLang].testimonialsTitle;
+      h2s[6].textContent = translations[currentLang].contactTitle;
+
+      document.querySelector("footer p:last-child").textContent = translations[currentLang].footer;
+    });
+  });
+</script>
 </head>
 
 <body>
@@ -113,7 +173,7 @@
   <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
     <a href="#contacto" class="btn">Contacto</a>
     <a href="cv-ferhdzg.pdf" class="btn secondary" download>Descargar CV</a>
-    <a href="?lang=en" class="btn accent">English Version</a>
+    <button id="langToggle" class="btn accent">English</button>
   </div>
 </header>
 
@@ -202,6 +262,7 @@
 
 <section>
   <h2>⭐ Testimonios</h2>
+  <p style="margin-bottom:10px;">⭐⭐⭐⭐⭐</p>
 
   <div class="project testimonio">
     <img src="img/minemytic.png" alt="MineMytic">
@@ -234,6 +295,16 @@
   <p>Email: <a href="mailto:hegf0408@gmail.com">hegf0408@gmail.com</a></p>
   <p>GitHub: <a href="https://github.com/FerHdzG" target="_blank">github.com/FerHdzG</a></p>
   <p>Portafolio: <a href="https://ferhdzg.github.io" target="_blank">ferhdzg.github.io</a></p>
+</section>
+
+<section>
+  <h2>🌍 English Summary</h2>
+  <p><strong>FerHdzG</strong> — Developer specialized in Discord bots and Minecraft server systems. Experience working with real communities, creating stable, scalable and easy‑to‑use solutions.</p>
+  <ul>
+    <li>Discord bots (tickets, moderation, automation)</li>
+    <li>Node.js & Discord.js</li>
+    <li>Minecraft server integrations</li>
+  </ul>
 </section>
 
 <footer>
