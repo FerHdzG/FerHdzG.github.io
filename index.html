@@ -13,6 +13,27 @@
       padding: 20px;
     }
 
+    /* ===== ANIMACIONES ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header, section {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    section {
+      animation-delay: 0.15s;
+    }
+
+    /* ===== ESTILOS ===== */
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -28,10 +49,6 @@
       margin-bottom: 12px;
     }
 
-    h3 {
-      margin: 0 0 6px 0;
-    }
-
     section {
       background-color: #020617;
       padding: 20px;
@@ -44,6 +61,14 @@
       text-decoration: none;
     }
 
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
     .tag {
       display: inline-block;
       background: #1e293b;
@@ -54,11 +79,17 @@
       margin-top: 6px;
     }
 
+    /* ===== PROYECTOS ===== */
     .project {
       display: flex;
       gap: 20px;
       align-items: center;
       margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
     }
 
     .project img {
@@ -66,8 +97,12 @@
       height: 120px;
       object-fit: cover;
       border-radius: 12px;
-      background: #020617;
       border: 1px solid #1e293b;
+      transition: transform 0.4s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.08);
     }
 
     footer {
@@ -98,27 +133,17 @@
       bots de Discord y en el desarrollo y gestión de
       <strong>servidores de Minecraft</strong>.
       He trabajado en múltiples comunidades creando sistemas,
-      automatización y herramientas para staff y jugadores.
-    </p>
-  </section>
-
-  <section>
-    <h2>🧑‍💻 Experiencia</h2>
-    <p>
-      Experiencia en la creación, desarrollo y mantenimiento de
-      servidores de Minecraft, así como en la integración con Discord
-      mediante bots y sistemas personalizados.
+      automatización y herramientas para staff.
     </p>
   </section>
 
   <section>
     <h2>🛠️ Habilidades</h2>
     <ul>
-      <li>HTML & CSS (intermedio)</li>
-      <li>JavaScript (intermedio)</li>
-      <li>Node.js</li>
+      <li>JavaScript (Node.js)</li>
       <li>Desarrollo de bots de Discord</li>
-      <li>Automatización de tareas</li>
+      <li>HTML & CSS</li>
+      <li>Automatización</li>
       <li>Gestión y creación de servidores de Minecraft</li>
     </ul>
   </section>
@@ -131,15 +156,14 @@
       <div>
         <h3>JockerControl</h3>
         <p>
-          Bot de Discord desarrollado para servidores de Minecraft,
-          enfocado en control administrativo, automatización y soporte
-          a la comunidad.
+          Bot de Discord creado para servidores de Minecraft,
+          enfocado en control administrativo, automatización
+          y soporte a comunidades.
         </p>
-        <span class="tag">Proyecto activo</span>
-        <span class="tag">Código privado</span>
+        <span class="tag">Activo</span>
+        <span class="tag">Privado</span>
       </div>
     </div>
-
   </section>
 
   <section>
@@ -149,11 +173,7 @@
       <img src="img/lunaticmc.png" alt="LunaticMC">
       <div>
         <h3>LunaticMC</h3>
-        <p>
-          Desarrollo de sistemas personalizados, bots de Discord,
-          automatización y soporte al staff.
-        </p>
-        <span class="tag">Producción</span>
+        <p>Desarrollo de sistemas, bots de Discord y soporte técnico.</p>
       </div>
     </div>
 
@@ -161,11 +181,7 @@
       <img src="img/crazycubes.png" alt="CrazyCubes">
       <div>
         <h3>CrazyCubes</h3>
-        <p>
-          Creación y configuración del servidor, apoyo en sistemas
-          internos y gestión de la comunidad.
-        </p>
-        <span class="tag">Minecraft</span>
+        <p>Creación y configuración del servidor y sistemas internos.</p>
       </div>
     </div>
 
@@ -173,11 +189,7 @@
       <img src="img/minemytic.png" alt="MineMytic">
       <div>
         <h3>MineMytic</h3>
-        <p>
-          Desarrollo y apoyo en la estructura del servidor,
-          configuraciones y herramientas administrativas.
-        </p>
-        <span class="tag">Minecraft</span>
+        <p>Apoyo en desarrollo, estructura y herramientas administrativas.</p>
       </div>
     </div>
 
@@ -185,14 +197,9 @@
       <img src="img/hylexmc.png" alt="HylexMC">
       <div>
         <h3>HylexMC</h3>
-        <p>
-          Experiencia en la creación y gestión del servidor,
-          integración con Discord y soporte técnico.
-        </p>
-        <span class="tag">Minecraft</span>
+        <p>Gestión del servidor e integración Discord.</p>
       </div>
     </div>
-
   </section>
 
   <section>
@@ -202,7 +209,7 @@
   </section>
 
   <footer>
-    <p>© 2025 FerHdzG — Developer & Minecraft Projects</p>
+    <p>© 2025 FerHdzG — Developer & Minecraft</p>
   </footer>
 
 </body>
